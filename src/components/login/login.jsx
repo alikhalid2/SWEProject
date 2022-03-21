@@ -17,18 +17,24 @@ export class Login extends React.Component {
     submitHandler = e => {
         e.preventDefault();
         alert('start here');
-        const xhr = new XMLHttpRequest();
-        xhr.onreadystateChange = () => {
-            if (xhr.readyState === 4 && xhr.status === 200)
-            {
-                alert('yeeh the file is sent successfully.');
-            }
-            alert('fuck this is shitttttttttttt.');
-        };
-        //const responce = await fetch()
-        xhr.open('post', 'http://localhost:5000/data/allow-cors');
-        xhr.send(this.state);
-        alert('please, wait');
+        // const xhr = new XMLHttpRequest();
+        // xhr.onreadystateChange = () => {
+        //     if (xhr.readyState === 4 && xhr.status === 200)
+        //     {
+        //         alert('yeeh the file is sent successfully.');
+        //     }
+        //     alert('fuck this is shitttttttttttt.');
+        // };
+        const responce = fetch('http://localhost:5000/data', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cashe',
+            body: JSON.stringify(this.state)
+        });
+        return responce.json()
+        // xhr.open('get', 'http://localhost:5000/data');
+        // xhr.send(this.state);
+        // alert('please, wait');
     };
     changeValue = e => {
         //clone
