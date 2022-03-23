@@ -25,13 +25,13 @@ export class Login extends React.Component {
         //     }
         //     alert('fuck this is shitttttttttttt.');
         // };
-        const responce = fetch('http://localhost:5000/data', {
+        const responce = fetch('/api', {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cashe',
             body: JSON.stringify(this.state)
         });
-        return responce.json()
+        console.log(responce.json());
         // xhr.open('get', 'http://localhost:5000/data');
         // xhr.send(this.state);
         // alert('please, wait');

@@ -9,7 +9,7 @@ app.get('/api', (request, responce) => {
     responce.send(JSON.parse(JSON.stringify({ahmed: 22, ali: 22, salah: 22})));
 });
 
-const PORT = 3000;
+const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`localhost:${PORT}`)
 });
