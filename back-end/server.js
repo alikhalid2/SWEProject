@@ -1,6 +1,41 @@
 const express = require('express');
-const bodyParser = require('body-Parser');
 const app = express();
+const bodyParser = require('body-Parser');
+
+
+  //**************************************************
+  const Ajv=require("ajv");
+  const ajv = new Ajv();
+  const newUser={
+      "type":"object",
+      "properties":{
+          "name":{
+              "type":"string",
+              "pattern":"^[A-Z]$"
+          },
+          "email":{
+          "type":"string",
+          "pattern":"^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+\.([a-z]+)(\.[a-z]+)?$",
+            },
+          "password":{
+            "type":"string",
+            "pattern":"^[a-zA-Z0-9]+$",
+              "minLength":7,
+              "maxLength":14
+          },
+          "required":["name","email","password"]
+      }
+
+  }
+
+  let validator=ajv.compile(newUser);
+  const users = [];
+
+  
+  //********************************************
+
+
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
@@ -19,12 +54,27 @@ app.post('/api/login', (req, res) => {
         username: 'ahmed',
         password: 'ahmed'
     };
+  
     console.log(req.body);
     if (req.body.username == checker.username && req.body.password == checker.password)
         res.send(true);
     else
         res.send(false);
 });
+  //********************************************
+
+app.post("/api/register",(req,res)=>{
+    console.log(req.body);
+    let valid =validator(req.body);
+    if (valid){
+        users.push(req.body);      //need to be stored in db
+    }
+    console.log(valid);
+    res.send(valid);
+
+
+});
+  //********************************************
 
 
 

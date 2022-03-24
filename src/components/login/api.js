@@ -7,6 +7,10 @@ const api = {
         console.log(data);
         return data;
     }, 
+    addNewUser : async (registerObject)=>{
+        const {data} = await axios.post('/api/register',registerObject );
+        return data;
+    }
 
 
 };
