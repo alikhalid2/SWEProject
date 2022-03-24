@@ -9,26 +9,26 @@ const bodyParser = require('body-Parser');
   const newUser={
       "type":"object",
       "properties":{
-          "name":{
+          "username":{
               "type":"string",
-              "pattern":"^[A-Z]$"
+              "pattern":"^[A-Z][a-zA-Z0-9 ]*$"
           },
           "email":{
           "type":"string",
-          "pattern":"^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+\.([a-z]+)(\.[a-z]+)?$",
+          "pattern":"^[a-zA-Z0-9\\._]+@[a-zA-Z0-9]+\\.[a-z]+(\\.[a-z]+)?$",
             },
           "password":{
             "type":"string",
-            "pattern":"^[a-zA-Z0-9]+$",
+            "pattern":"^[a-zA-Z0-9 ]+$",
               "minLength":7,
               "maxLength":14
           },
-          "required":["name","email","password"]
+          //"required": ["username","email","password"]
       }
 
   }
 
-  let validator=ajv.compile(newUser);
+  let validator=ajv.compile(schema = newUser);
   const users = [];
 
   
@@ -65,7 +65,7 @@ app.post('/api/login', (req, res) => {
 
 app.post("/api/register",(req,res)=>{
     console.log(req.body);
-    let valid =validator(req.body);
+    let valid = validator(req.body);
     if (valid){
         users.push(req.body);      //need to be stored in db
     }
