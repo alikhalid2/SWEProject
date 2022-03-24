@@ -3,16 +3,21 @@ import loginImg from "../../images/login.jpg";
 
 
 export class Register extends React.Component {
-    constructor (props) {
-        super (props);
-    }
+    // constructor (props) {
+    //     super (props);
+    // }
+    state = {
+        username: '',
+        email: '',
+        passoword: ''
+    };
     render() {
         return (
             <div className="base-container" ref={this.props.containerRef}>
                 <div className="header">Register</div>
                 <div className="content">
                     <div className="image">
-                        <img src={loginImg} />
+                        <img src={loginImg} alt="LOGIN"/>
                     </div>
                     <div className="form">
                         <div className="form-group">
