@@ -1,0 +1,114 @@
+.bar{
+width: 100%;
+    padding: 0 30px;
+    display: flex;
+    
+    height: 50px;
+    top: 0;
+     z-index: 2;
+   margin-left:px;
+width: ; 
+
+  
+}
+
+.bar2{
+width: 100%;
+   
+    display: flex;
+    justify-content: center;
+  position: relative;
+   
+line-height: normal;
+margin-left:px;
+    height: 50px;
+flex-direction: row;
+width: ; 
+    background-color:#f09027 ;
+}
+.search{
+ border-width: 2px;
+width:200px ;
+height: 30px;
+border-radius: 50%;
+
+}
+.comment{
+width:;
+height: ;
+font-size:50px;
+font-family:ans-serif;
+
+}
+.moods{
+
+font-size: 50px;
+}
+
+
+    #navbar {
+
+width: 100%;
+    background-color: ;
+position:;
+top:10px;
+left:10px;
+    
+  }
+.navul {
+    margin: 0px;
+    padding: 5px 0px 5px 30px;
+  }
+  .navli {
+    display: inline;
+    margin-right: 100px;
+    
+  }
+
+.sameline{
+display:inline-block;
+margin-right: 20px;
+
+}
+body {
+    font-family: proximanova,arial,sans-serif;
+    
+    color: #f50;
+    background:repeating-linear-gradient(35deg, #1d1716, #42240c, #a55233) ; 
+    display: flex;
+    flex-direction: column;
+position: relative;
+border-radius: 20px;
+    width: 100%;
+    height: 1000px;
+    margin: 50px auto;
+
+}
+body {
+display: block;
+margin: 8px ;
+}
+
+* {
+    margin: 0;
+    
+}
+
+
+
+.header-container .ig-wrapper.wide {
+    width: calc(100% - 40px);
+    max-width: 1036px;
+}
+
+
+.separator.wide {
+    height: 80px;
+}
+
+
+
+
+div {
+    display: block;
+}
