@@ -1,6 +1,6 @@
 import React from "react";
 import loginImg from "../../images/login.jpg";
-import api from './api';
+import api from '../api';
 
 
 export class Login extends React.Component {
@@ -15,7 +15,10 @@ export class Login extends React.Component {
     submitHandler = async e => {
         e.preventDefault();
         if (await api.isInDb(this.state))
+        {
+            this.props.onLogin(this.state.username);
             console.log('Login Succeded');
+        }
         else
             console.log('Login Failed')
     };
