@@ -1,7 +1,10 @@
+// handling express module
 const express = require('express');
 const app = express();
+
+// handling userRoutes module { routes for api that about users }
 const usersRoutes = require('./routes/users.js');
-const bodyParser = require('body-Parser');
+
 
 
 //* Mongoose contactor with mongo db data base
@@ -15,54 +18,19 @@ mongoose.connect('mongodb://localhost:27017/users',
 .catch((err) => console.log(err));
 //
 
-
-//
-
-/*
-const goodUser = {
-    username: 'all',
-    email: 'all.adel@gmail.com',
-    password: 'tryAgain'
-};
-
-user.init()
-.then(() => user.create(goodUser, (err) => console.log(err)))
-.catch((err) => console.log(err));
-*/
-//goodUser.save().catch((err) => console.log('errrr finally'));
-
-
-
-  //**************************************************
-  
-  const users = [];
-
-  
-  //********************************************
-
-
-
-
+// handling bodyParser module { helping with encoded html body }
+const bodyParser = require('body-Parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
+
+// handling static files
 app.use(express.static('../public'));
 
 
 // handling users routes as middlewares
 app.use("/api", usersRoutes);
-app.get('/api', (req, res) => {
-    res.send({
-        username: 'ahmed',
-        email: 'hmdeslam.adel@gmail.com'
-    });
-});
 
-
-
-  //********************************************
-
-
-
+// make the server listening to port 7000
 app.listen(7000, () => {
     console.log('server is running');
 });
