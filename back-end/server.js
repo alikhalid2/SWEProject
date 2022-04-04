@@ -18,7 +18,7 @@ mongoose.connect('mongodb://localhost:27017/users',
 //
 
 // handling bodyParser module { helping with encoded html body }
-const bodyParser = require('body-Parser');
+const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 // handling static files
