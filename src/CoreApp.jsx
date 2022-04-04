@@ -13,9 +13,9 @@ import api from './components/api.js';
 // handling router module
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-
 // handling Core App details
 export default class CoreApp extends Component{
+    // defining the constructor of the Core App
     constructor (props){
         super(props);
         this.state = {
@@ -24,11 +24,15 @@ export default class CoreApp extends Component{
         
         
     };
+
+    // initializing the state
     async componentDidMount() {
         const loginner = await api.loginInfo();
         console.log(loginner.username);
         this.setState({username: loginner.username})
     }
+
+    // handling loging process
     loginHandler = async (username) => {
         const previousState = this.state;
 
@@ -41,6 +45,8 @@ export default class CoreApp extends Component{
             this.setState(previousState);
         }
     };
+
+    // handling logout process
     logoutHandler = async (username) => {
         //const previousState = this.state;
         this.setState({username: ''})
@@ -52,28 +58,40 @@ export default class CoreApp extends Component{
             console.log(err);
         }
     }
+
+    // Render components for the page
     render() {
+        // testing if the state has a value
         console.log(this.state.username);
+
+
+
+        // return of the render
         return (
             <React.Fragment>
+                {/* Header component */}
                 <Header user = {this.state.username} 
                         onLogout = {this.logoutHandler}/>
                     
-                
-                    <Routes>
-                        <Route path = '/' element = {<h1>Hi I am Home</h1>} />
-                        {/* هجيب ال redirect واظبط الحل 
-                        */}
-                        
-                        {this.state.username? <Route    path = '/login' 
-                                                        element = {<Navigate to = '/' replace />} /> 
-                            : <Route    path = '/login' 
-                                        element = {<Login   user = {{...this.state}}
-                                                            onLogin = {this.loginHandler}    
-                                    
-                        />} />}
-                        <Route path = '/gameadding' element = {<GameAdding />}/>
-                    </Routes>
+                {/* Inner Page */}
+                <Routes>
+                    {/* The Root Path */}
+                    <Route path = '/' element = {<h1>Hi I am Home</h1>} />
+                    
+                    {/* The Login Path */}
+                    {this.state.username? <Route    path = '/login' 
+                                                    element = {<Navigate to = '/' replace />} /> 
+                        : <Route    path = '/login' 
+                                    element = {<Login   user = {{...this.state}}
+                                                        onLogin = {this.loginHandler}    
+                                
+                    />} />}
+
+                    {/* Adding Game Path */}
+                    <Route path = '/gameadding' element = {<GameAdding />}/>
+                </Routes>
+
+                {/* Footer component */}
                 <Footer />
             </React.Fragment>
             );

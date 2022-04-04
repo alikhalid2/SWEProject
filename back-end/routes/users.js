@@ -1,11 +1,20 @@
 // handling express
 const express = require('express');
 
+
+// handling multer module
+const multer = require('multer');
+const upload = multer()
+
+// handling file upload
+const fileUpload = require('express-fileupload');
+
 // handling validator
 const validator = require('../utils/validate.js');
 
 // handling user database controller
 const user = require('../controllers/UsersDbController.js');
+const { application } = require('express');
 
 // handling express router
 const router = express.Router();
@@ -65,10 +74,21 @@ router.put('/user', (req, res) => {
     
 });
 router.put('/user/logout', async (req, res) => {
-    const {data} = await user.findOneAndUpdate({currentUser: 1}, {currentUser: 0});
-    console.log(data);
+    await user.findOneAndUpdate({currentUser: 1}, {currentUser: 0});
 })
 
 
+router.post('/test',fileUpload(), (req, res) => 
+{
+    //console.log(upload);
+    console.log(req.files);
+    console.log(req.body);
+    for (let i in req.files)
+    {
+        let path = './test/' + req.files[i].name;
+        req.files[i].mv(path);
+    }
+
+})
 // export router
 module.exports = router;

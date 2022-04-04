@@ -6,7 +6,6 @@ const app = express();
 const usersRoutes = require('./routes/users.js');
 
 
-
 //* Mongoose contactor with mongo db data base
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/users', 
@@ -22,7 +21,6 @@ mongoose.connect('mongodb://localhost:27017/users',
 const bodyParser = require('body-Parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
-
 // handling static files
 app.use(express.static('../public'));
 
