@@ -1,0 +1,34 @@
+.downloadbutton {
+    margin-top: 20px;
+    margin-left: 30%;
+    background-color: green;
+    color: white;
+    width: auto;
+    height: 40px;
+    font-family: Agency FB;
+    font-size: 25px;
+    
+    position: relative;
+}
+    
+    
+#dlbutton:hover {transform: scale(1.25);}
+    
+.play-time {animation-name: colors;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;}
+    
+
+@keyframes colors {
+    0% {color: white;}
+
+    25% {color: cyan;}
+
+    50% {color: blue;}
+
+    75% {color: red;}
+
+    100% {color: black;}
+}
+
+    

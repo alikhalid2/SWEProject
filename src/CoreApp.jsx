@@ -6,6 +6,7 @@ import Login from "./components/login/App";
 import Header from './components/Header/App';
 import Footer from './components/Footer/App';
 import GameAdding from './components/GameAdding/App';
+import GamePlay from './components/GamePlay/App';
 
 // handling api file to get our custom apis
 import api from './components/api.js';
@@ -89,6 +90,7 @@ export default class CoreApp extends Component{
 
                     {/* Adding Game Path */}
                     <Route path = '/gameadding' element = {<GameAdding />}/>
+                    <Route path = '/gameplay' element = {<GamePlay />} />
                 </Routes>
 
                 {/* Footer component */}
