@@ -37,14 +37,15 @@ export default class App extends Component {
                        
 
 
+                    <div className = 'gameContainer'>
+                        <br/><playtime className= "play-time">IT'S TIME TO PLAY</playtime>
+                        <br/>
 
-                    <br/><playtime className= "play-time">IT'S TIME TO PLAY</playtime>
-                    <br/>
-
-                    <iframe src = "http://localhost:7000/Games/FirstGame/webGL/index.html" width = {1000} height = {700} allowFullScreen title = "blabla"></iframe>
-                    
-                    <br />
-                    <button id= "dlbutton" className="downloadbutton" onClick={this.dd}> Download</button>
+                        <iframe className = 'game' src = "http://localhost:7000/Games/FirstGame/webGL/index.html" width = {1000} height = {700} allowFullScreen title = "blabla"></iframe>
+                        
+                        <br />
+                        <button id= "dlbutton" className="downloadbutton" onClick={this.dd}> Download</button>
+                    </div>
             </React.Fragment>
         )
     }

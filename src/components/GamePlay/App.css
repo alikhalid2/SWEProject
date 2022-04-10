@@ -1,12 +1,16 @@
 .downloadbutton {
-    margin-top: 20px;
-    margin-left: 30%;
-    background-color: green;
+    margin-left: 23%;
+    border-radius: 2em;
+    border: 3px solid cyan;
+    font-size: 2em;
+    background: none;
+    padding: 20px;
+    /*background-color: green;
     color: white;
     width: auto;
     height: 40px;
     font-family: Agency FB;
-    font-size: 25px;
+    font-size: 25px;*/
     
     position: relative;
 }
@@ -14,9 +18,13 @@
     
 #dlbutton:hover {transform: scale(1.25);}
     
-.play-time {animation-name: colors;
+.play-time {
+    animation-name: colors;
     animation-duration: 4s;
-    animation-iteration-count: infinite;}
+    animation-iteration-count: infinite;
+    font-size: 2em;
+    margin-left: 20%;
+}
     
 
 @keyframes colors {
@@ -28,7 +36,13 @@
 
     75% {color: red;}
 
-    100% {color: black;}
+    100% {color: white;}
 }
 
-    
+iframe.game {
+    border: none;
+}
+
+div.gameContainer {
+    margin-left: 2em;
+}
