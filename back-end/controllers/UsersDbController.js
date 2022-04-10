@@ -12,7 +12,8 @@ const userschema = new mongoose.Schema({
         unique: true,
 
     },
-    password: String
+    password: String,
+    currentUser: Boolean
 });
 //
 

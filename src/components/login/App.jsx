@@ -10,7 +10,7 @@ class App extends React.Component {
       isLogginActive: true,
     }
   }
-
+  
 
   componentDidMount() {
     //Add .right by default
@@ -30,6 +30,8 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.props);
+    const {user, onLogin} = this.props;
     const { isLogginActive } = this.state;
     const current = isLogginActive ? "Register" : "Login";
     const currentActive = isLogginActive ? "login" : "register";
@@ -38,7 +40,9 @@ class App extends React.Component {
         <div className="login">
           <div className="container" ref={ref => (this.container = ref)}>
             {isLogginActive && (
-              <Login containerRef={ref => (this.current = ref)} />
+              <Login  user = {user} 
+                      onLogin = {onLogin}
+                      containerRef={ref => (this.current = ref)} />
             )}
             {!isLogginActive && (
               <Register containerRef={ref => (this.current = ref)} />

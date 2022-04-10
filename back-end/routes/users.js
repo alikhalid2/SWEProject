@@ -1,11 +1,20 @@
 // handling express
 const express = require('express');
 
+
+// handling multer module
+const multer = require('multer');
+const upload = multer()
+
+// handling file upload
+const fileUpload = require('express-fileupload');
+
 // handling validator
-const validator = require('../middlewares/validate.js');
+const validator = require('../utils/validate.js');
 
 // handling user database controller
 const user = require('../controllers/UsersDbController.js');
+const { application } = require('express');
 
 // handling express router
 const router = express.Router();
@@ -32,7 +41,7 @@ router.post('/login', (req, res) => {
 });
 
 // handling register request
-router.post("/register",(req,res)=>{
+router.post("/register",(req,res) => {
     console.log(req.body);
     let valid = validator(req.body);
     if (valid){
@@ -48,5 +57,38 @@ router.post("/register",(req,res)=>{
 
 });
 
+// getting the current user info
+router.get('/user', async (req, res) => {
+    const availableUser = await user.find({currentUser: 1})
+    console.log(availableUser);
+    res.send(availableUser[0]);
+});
+
+// edit the current user info 
+router.put('/user', (req, res) => {
+    user.findOneAndUpdate({currentUser: 1}, {currentUser: 0})
+    .then(async () => {
+        console.log(req.body.username);
+        await user.findOneAndUpdate(req.body, {currentUser: 1})
+    });
+    
+});
+router.put('/user/logout', async (req, res) => {
+    await user.findOneAndUpdate({currentUser: 1}, {currentUser: 0});
+})
+
+
+router.post('/test',fileUpload(), (req, res) => 
+{
+    //console.log(upload);
+    console.log(req.files);
+    console.log(req.body);
+    for (let i in req.files)
+    {
+        let path = './test/' + req.files[i].name;
+        req.files[i].mv(path);
+    }
+
+})
 // export router
 module.exports = router;

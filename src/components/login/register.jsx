@@ -1,17 +1,19 @@
 import React from "react";
 import loginImg from "../../images/login.jpg";
-import api from "./api";
+import api from "../api";
 
 
 export class Register extends React.Component {
-    // constructor (props) {
-    //     super (props);
-    // }
-    state = {
-        username: '',
-        email: '',
-        password: ''
-    };
+    constructor (props) {
+        super (props);
+        this.state = {
+            username: '',
+            email: '',
+            password: ''
+        };
+    }
+    
+    
     changeHandler = e=>{
      //console.log(e.currentTarget.value);
      //clone
@@ -29,6 +31,7 @@ export class Register extends React.Component {
             console.log('register Failed')
     };
     render() {
+        console.log(this.props);
         return (
             <form onSubmit={this.submitHandler}>
             <div className="base-container" ref={this.props.containerRef}>
