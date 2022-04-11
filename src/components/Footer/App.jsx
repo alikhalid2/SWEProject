@@ -6,7 +6,9 @@ export default class App extends Component {
 
     render(){ 
         return(
-            <h1>Footer</h1>
+          <footer>
+              <p>Created By Team <span>X</span></p>
+          </footer>
     );
     }
 }

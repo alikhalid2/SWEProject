@@ -1,38 +1,78 @@
 .bar{
-  background-color: #333;
+  /*background-color: rgb(126, 123, 123);*/
+  background-color: darkcyan;
+  background-image: linear-gradient(0deg, rgba(0,62,62, 0),rgba(0,62,62, 0.8));
+ /* background:repeating-linear-gradient(180deg, #1d1716, #42240c, #a55233) ; */
   color: #EEE;
   display: grid;
   margin: 0;
-  padding: 0;
+  margin-bottom:3em;
   grid-template-areas: 'logo search login';
   align-items: center; 
   height: 4em;
-  justify-content: space-around;
+  justify-content:space-between;
 }
 
 .header-logo {
   grid-area: logo;
+  margin-left: 3em;
   
 }
 .header-logo h1 {
+  height: auto;
   margin: 0;
   padding: 0;
   
 }
 .haeder-search{
   grid-area: search;
+  display: flexbox;
+  align-items: center;
   margin: 0;
   padding: 0;
-
+}
+.header-search input[type="text"]{
+  
+  width:200px ;
+  height: 30px;
+  border-radius: 2em;
+}
+.header-search button[type="submit"]{
+  margin-left: 1em;
+  font-size: 1.1em;
+  border-radius: 1em;
+  
 }
 .header-login {
   grid-area: login;
   margin-right: 3em;
   
 }
+.header-login button{
+  border-radius: 1em;
+  padding: 0.2em 1em;
+}
 .header-login div{
   float: left;
   padding-right:10px;
+}
+
+
+
+footer {
+  background-color: black;
+  height: 2em;
+  margin-top: 3em;
+
+}
+footer p{
+  color: white;
+  text-align: center;
+  padding-top: 0.25em;
+
+}
+footer p span {
+  color: red;
 }
 /*
 .sameline{
