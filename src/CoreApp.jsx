@@ -7,7 +7,7 @@ import Header from './components/Header/App';
 import Footer from './components/Footer/App';
 import GameAdding from './components/GameAdding/App';
 import GamePlay from './components/GamePlay/App';
-
+import Home from './components/Home/App';
 // handling api file to get our custom apis
 import api from './components/api.js';
 
@@ -77,7 +77,7 @@ export default class CoreApp extends Component{
                 {/* Inner Page */}
                 <Routes>
                     {/* The Root Path */}
-                    <Route path = '/' element = {<h1>Hi I am Home</h1>} />
+                    <Route path = '/' element = {<Home />} />
                     
                     {/* The Login Path */}
                     {this.state.username? <Route    path = '/login' 

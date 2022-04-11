@@ -1,0 +1,108 @@
+.bar{
+  background-color: #333;
+  color: #EEE;
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-areas: 'logo search login';
+  align-items: center; 
+  height: 4em;
+  justify-content: space-around;
+}
+
+.header-logo {
+  grid-area: logo;
+  
+}
+.header-logo h1 {
+  margin: 0;
+  padding: 0;
+  
+}
+.haeder-search{
+  grid-area: search;
+  margin: 0;
+  padding: 0;
+
+}
+.header-login {
+  grid-area: login;
+  margin-right: 3em;
+  
+}
+.header-login div{
+  float: left;
+  padding-right:10px;
+}
+/*
+.sameline{
+display:inline-block;
+margin-right: 20px;
+padding: 5px;
+
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+div{
+  display: block;
+}
+.block{
+height: 1200px;
+}
+body {
+    font-family: proximanova,arial,sans-serif;
+
+    color: ;
+  background: ;
+    display: ;
+    flex-direction: column;
+position: relative;
+border-radius: ;
+    width: auto;
+    height:1000px ;
+    margin: 10px auto;
+left:auto;
+}
+body {
+display: block;
+margin: 8px ;
+}
+#navbar {
+
+width: auto;
+height:800px;
+ background-color: ;
+position:;
+top:10px;
+left:10px;
+border: 10px;
+ border-style: solid;
+  border-width: solid;
+  padding: 10px;
+}
+.navul {
+ margin: 0px;
+ padding: 5px 0px 5px 30px;
+}
+.navli {
+ display: inline;
+ margin-right: 100px;
+
+}
+.separator.wide {
+    height: 80px;
+}
+.moods{
+
+font-size: 50px;
+}
+.comment{
+width:;
+height: ;
+font-size:20px;
+font-family:ans-serif;
+
+}
+*/
