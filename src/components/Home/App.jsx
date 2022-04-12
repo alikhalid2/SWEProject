@@ -10,17 +10,23 @@ export default class App extends Component{
 
     render() {
         return (
-            <div class="sameline ">
-            <form>
-              <select id="select">
-        <option id="all game">All Game</option>
-        <option id="latest game" >Latest Game</option>
-        <option id="coming soon" >Coming Soon</option>
-        <option id="star war" >Star War </option>
-        <option id="sports" > Sports</option>
-      </select>
-            </form>
-          </div>   
+            
+           
+              <div class="bar2">
+	<nav id="navbar">
+	<ul class="navul">
+	<li  class="navli"> All Game </li>
+	 <div class="navli"> Latest Game </div>
+	<li class="navli">Coming Soon </li>
+	<li class="navli">Star War </li>
+	<li class="navli">Star War </li>
+	<li class="navli">EA Sports </li>
+	
+	</ul>
+	</nav>
+
+	</div>
+           
         );
     }
 }
