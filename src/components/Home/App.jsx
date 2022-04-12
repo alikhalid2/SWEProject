@@ -1,5 +1,4 @@
 import React , {Component} from 'react';
-import GameCard from '../GameCard/App';
 import Category from './Category';
 // handling router module
 
@@ -13,19 +12,7 @@ export default class App extends Component{
 
         };
     }
-	filteredGames = (category) => {
-		if (category === undefined){
-			return this.props.games
-		}
-	}
-
-	returnGames = (games) => {
-		const alist = [];
-		for (let game in games){
-			alist.push(<li key = {this.props.games[game].name}><GameCard />{this.props.games[game].name}</li>)
-		}
-		return alist
-	}
+	
     render() {
         return (
             
@@ -46,7 +33,7 @@ export default class App extends Component{
 
 	<ul>
 		<Routes>
-			<Route path = ':category' element = {<Category />} />
+			<Route path = ':category' element = {<Category games = {this.props.games}/>} />
 		</Routes>
 	</ul>
 	</div>
