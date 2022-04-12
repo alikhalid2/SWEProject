@@ -7,25 +7,25 @@ export default class App extends Component {
     render(){ 
         return(
             <React.Fragment>
-                 <div class="team"> <p>Created By Team <span>X</span></p>
+                 <div className="team"> <p>Created By Team <span>X</span></p>
              
              </div>
           <footer>
              
              
-             <div class="footer-logo">
+             <div className="footer-logo">
                  <h1 >Flare gun</h1>
             </div>
-             <div class="list">
-             <ul class="list-decoration">
+             <div className="list">
+             <ul className="list-decoration">
                  <li>contact us</li>
                  <li>privacy policy</li>
                  <li>FAQ</li>
              </ul>
              </div>
              
-             <div class="list2">
-             <ul class="list-decoration">
+             <div className="list2">
+             <ul className="list-decoration">
                  <li>facebook</li>
                  <li>twitter</li>
                  <li>instagram</li>

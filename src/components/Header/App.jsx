@@ -35,16 +35,16 @@ export default class App extends Component {
               <React.Fragment>
                   
                   <div>
-                  <div class="bar ">
-                        <div class="header-logo">
+                  <div className="bar ">
+                        <div className="header-logo">
                           <h1>Flare gun</h1>
                           </div>
                   
                           
-                          <div class="header-search">
+                          <div className="header-search">
                           <Search />
                           </div>
-                   <div class="header-login">{this.isLogin()}</div>
+                   <div className="header-login">{this.isLogin()}</div>
 
                     </div>   
                       </div>
