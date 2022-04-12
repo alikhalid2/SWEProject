@@ -26,32 +26,32 @@ export default class CoreApp extends Component{
             games: {
                 1: {
                     name: '2D platformer',
-                    thumnail: '/Games/1/Screenshots/Screenshot_677x423_8.png',
+                    thumnail: 'http://localhost:3000/Games/1/Screenshots/Screenshot_677x423_8.png',
                     categories: ['platform', 'adventure'],
                     discription: 'blablablablablablablablablablablablablablabla',
-                    path: '/Games/1/',
+                    path: 'http://localhost:3000/Games/1/',
                 },
                 2: {
                     name: '2D shooter',
-                    thumnail: '/Games/2/Screenshots/Screenshot_1904x891_12.png',
+                    thumnail: 'http://localhost:3000/Games/2/Screenshots/Screenshot_1904x891_12.png',
                     categories: ['shooter', 'action'],
                     discription: 'blablablablablablablablablablablablablablabla',
-                    path: '/Games/2/',
+                    path: 'http://localhost:3000/Games/2/',
                 },
                 3: {
                     name: '3D platformer',
-                    thumnail: '/Games/3/Screenshots/Screenshot_1920x907_14.png',
+                    thumnail: 'http://localhost:3000/Games/3/Screenshots/Screenshot_1920x907_14.png',
                     categories: ['platform', 'action'],
                     discription: 'blablablablablablablablablablablablablablabla',
-                    path: '/Games/3/',
+                    path: 'http://localhost:3000/Games/3/',
                     
                 },
                 4: {
                     name: '3D shooter',
-                    thumnail: '/Games/4/Screenshots/Screenshot_1920x907_14.png',
+                    thumnail: 'http://localhost:3000/Games/4/Screenshots/Screenshot_1132x483_9.png',
                     categories: ['shooter', 'adventure'],
                     discription: 'blablablablablablablablablablablablablablabla',
-                    path: '/Games/4/',
+                    path: 'http://localhost:3000/Games/4/',
                 }
             },
             currentGame: 1,
