@@ -1,4 +1,10 @@
-import React, { Component } from 'react';
+import React , {Component} from 'react';
+import GameCard from '../GameCard/App';
+import Category from './Category';
+// handling router module
+
+import { Link, Route, Routes} from 'react-router-dom';
+
 
 export default class App extends Component{
     constructor(props) {
@@ -7,24 +13,42 @@ export default class App extends Component{
 
         };
     }
+	filteredGames = (category) => {
+		if (category === undefined){
+			return this.props.games
+		}
+	}
 
+	returnGames = (games) => {
+		const alist = [];
+		for (let game in games){
+			alist.push(<li key = {this.props.games[game].name}><GameCard />{this.props.games[game].name}</li>)
+		}
+		return alist
+	}
     render() {
         return (
             
            
-              <div class="bar2">
+			<div className="bar2">
 	<nav id="navbar">
-	<ul class="navul">
-	<li  class="navli"> All Game </li>
-	 <div class="navli"> Latest Game </div>
-	<li class="navli">Coming Soon </li>
-	<li class="navli">Star War </li>
-	<li class="navli">Star War </li>
-	<li class="navli">EA Sports </li>
+	<ul className="navul">
+	<Link to = '/ahmed'><li  className="navli"> All Game </li></Link>
+	<li className="navli"> Latest Game </li>
+	<li className="navli">Coming Soon </li>
+	<li className="navli">Star War </li>
+	<li className="navli">Star War </li>
+	<li className="navli">EA Sports </li>
 	
 	</ul>
+
 	</nav>
 
+	<ul>
+		<Routes>
+			<Route path = ':category' element = {<Category />} />
+		</Routes>
+	</ul>
 	</div>
            
         );

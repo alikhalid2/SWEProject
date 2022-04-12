@@ -12,7 +12,9 @@ import Home from './components/Home/App';
 import api from './components/api.js';
 
 // handling router module
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes} from 'react-router-dom';
+
+
 
 // handling Core App details
 export default class CoreApp extends Component{
@@ -20,18 +22,56 @@ export default class CoreApp extends Component{
     constructor (props){
         super(props);
         this.state = {
-            username: ""
+            username: "",
+            games: {
+                1: {
+                    name: '2D platformer',
+                    thumnail: '/Games/1/Screenshots/Screenshot_677x423_8.png',
+                    categories: ['platform', 'adventure'],
+                    discription: 'blablablablablablablablablablablablablablabla',
+                    path: '/Games/1/',
+                },
+                2: {
+                    name: '2D shooter',
+                    thumnail: '/Games/2/Screenshots/Screenshot_1904x891_12.png',
+                    categories: ['shooter', 'action'],
+                    discription: 'blablablablablablablablablablablablablablabla',
+                    path: '/Games/2/',
+                },
+                3: {
+                    name: '3D platformer',
+                    thumnail: '/Games/3/Screenshots/Screenshot_1920x907_14.png',
+                    categories: ['platform', 'action'],
+                    discription: 'blablablablablablablablablablablablablablabla',
+                    path: '/Games/3/',
+                    
+                },
+                4: {
+                    name: '3D shooter',
+                    thumnail: '/Games/4/Screenshots/Screenshot_1920x907_14.png',
+                    categories: ['shooter', 'adventure'],
+                    discription: 'blablablablablablablablablablablablablablabla',
+                    path: '/Games/4/',
+                }
+            },
+            currentGame: 1,
         };
         
         
     };
-
+    
     // initializing the state
     async componentDidMount() {
+        
         const loginner = await api.loginInfo();
         console.log(loginner.username);
         this.setState({username: loginner.username})
     }
+    // handling current game
+    changeCurrentGame = (gameNumber) => {
+        this.setState({currentGame: gameNumber});
+    }
+
 
     // handling loging process
     loginHandler = async (username) => {
@@ -59,14 +99,11 @@ export default class CoreApp extends Component{
             console.log(err);
         }
     }
-
+    
     // Render components for the page
     render() {
         // testing if the state has a value
         console.log(this.state.username);
-
-
-
         // return of the render
         return (
             <React.Fragment>
@@ -77,7 +114,7 @@ export default class CoreApp extends Component{
                 {/* Inner Page */}
                 <Routes>
                     {/* The Root Path */}
-                    <Route path = '/' element = {<Home />} />
+                    <Route path = '/*' element = {<Home games = {this.state.games} onClickGame = {this.changeCurrentGame} />} />
                     
                     {/* The Login Path */}
                     {this.state.username? <Route    path = '/login' 
@@ -90,12 +127,12 @@ export default class CoreApp extends Component{
 
                     {/* Adding Game Path */}
                     <Route path = '/gameadding' element = {<GameAdding />}/>
-                    <Route path = '/gameplay' element = {<GamePlay />} />
+                    <Route path = '/gameplay' element = {<GamePlay game = {this.state.games[this.state.currentGame]}/>} />
+                
                 </Routes>
-
                 {/* Footer component */}
                 <Footer />
-            </React.Fragment>
+                </React.Fragment>
             );
     }
 }
