@@ -3,7 +3,11 @@
 // }
 .game-list li {
     text-decoration: none;
+    box-shadow: 5px 5px 5px 5px  rgb(20, 20, 20);
+    // box-shadow: 5px 5px 5px 5px  gray;
+   
 }
 .game-paragraph {
     margin: 0;
+    text-shadow: 2px 2px 5px red;
 }

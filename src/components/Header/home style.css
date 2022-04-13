@@ -151,6 +151,11 @@ footer {
   text-align: center;
  display:inline ;
 }
+.gameborder{
+  border: 5px solid red;
+  box-shadow: 10px 5px 5px grey;
+  
+}
 /* Float four columns side by side */
 /* .column {
   float: left;

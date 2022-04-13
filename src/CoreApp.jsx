@@ -117,7 +117,7 @@ export default class CoreApp extends Component{
 			templateArea += `'${i} ${i + 1} ${i + 2}' `;
 		}
 		
-		gridContainer.style.cssText = `display: grid; grid-template-areas: ${templateArea}; grid-template-columns: auto auto auto; gap: 2em;`;
+		gridContainer.style.cssText = `display: grid; grid-template-areas: ${templateArea}; grid-template-columns: auto auto auto; gap: 2em; `;
 		
     }
 
