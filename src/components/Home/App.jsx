@@ -38,17 +38,20 @@ export default class App extends Component{
 		return categories;
 	};
 
+	async componentDidMount(){
 
+	this.props.instanceStyle()
+	}
 
 
 
 	
 
     render() {
+		
         return (
         
 			<React.Fragment>
-          
 			<div className="bar2">
 	<nav id="navbar">
 	<ul className="navul">
@@ -70,6 +73,7 @@ export default class App extends Component{
 			<Route path = '/' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
 		</Routes>
 	</ul>  
+
 	</React.Fragment>
  
         );

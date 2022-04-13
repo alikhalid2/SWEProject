@@ -120,11 +120,9 @@ export default class CoreApp extends Component{
 		
 		gridContainer.style.cssText = `display: grid; grid-template-areas: ${templateArea}; grid-template-columns: auto auto auto; gap: 2em; `;
 
-        this.doStyle();
 
 		
     }
-
 
     // handling loging process
     loginHandler = async (username) => {
@@ -170,7 +168,7 @@ export default class CoreApp extends Component{
     };
     // Render components for the page
     render() {
-        window.onpopstate(this.doStyle);
+       // window.onpopstate = this.doStyle;
         // return of the render
         return (
             
@@ -182,7 +180,7 @@ export default class CoreApp extends Component{
                 {/* Inner Page */}
                 <Routes>
                     {/* The Root Path */}
-                    <Route path = '/*' element = {<Home games = {this.state.games}/>} />
+                    <Route path = '/*' element = {<Home games = {this.state.games} instanceStyle = {this.doStyle} />} />
                     
                     {/* The Login Path */}
                     {this.state.username? <Route    path = '/login' 

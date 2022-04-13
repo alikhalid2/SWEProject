@@ -37,7 +37,7 @@ export default class App extends Component {
                   <div>
                   <div className="bar ">
                         <div className="header-logo">
-                          <h1>Flare gun</h1>
+                          <Link to = "/" style = {{color: 'white', textDecoration: 'none'}}><h1>Flare gun</h1></Link>
                           </div>
                   
                           
