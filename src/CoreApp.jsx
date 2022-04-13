@@ -22,7 +22,7 @@ export default class CoreApp extends Component{
     constructor (props){
         super(props);
         this.state = {
-            username: "",
+            username: '',
             games: {
                 1: {
                     name: '2D platformer',
@@ -164,7 +164,7 @@ export default class CoreApp extends Component{
 
                     {/* Adding Game Path */}
                     <Route path = '/gameadding' element = {<GameAdding />}/>
-                    <Route path = '/gameplay/:gameNumber' element = {<GamePlay isUserActive = {this.state.username !== ''}games = {this.state.games}/>} />
+                    <Route path = '/gameplay/:gameNumber' element = {<GamePlay isUserActive = {this.state.username}games = {this.state.games}/>} />
                 
                 </Routes>
                 {/* Footer component */}
