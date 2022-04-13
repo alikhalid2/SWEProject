@@ -1,5 +1,7 @@
 import React , {Component} from 'react';
 import Category from './Category';
+import './home.scss';
+
 // handling router module
 
 import { Link, Route, Routes} from 'react-router-dom';
@@ -61,7 +63,7 @@ export default class App extends Component{
 	</nav>
 	</div>
     
-	<ul>
+	<ul className = "game-list">
 		<Routes>
 			<Route path = ':category' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
 			<Route path = '/' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
