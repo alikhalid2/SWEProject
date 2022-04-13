@@ -7,9 +7,7 @@ export default class App extends Component {
     render(){ 
         return(
             <React.Fragment>
-                 <div className="team"> <p>Created By Team <span>X</span></p>
-             
-             </div>
+
           <footer>
              
              
@@ -33,6 +31,9 @@ export default class App extends Component {
              </div>
              
           </footer>
+          <div class="team"> <p>Created By Team <span>X</span></p>
+             
+             </div>             
           </React.Fragment>
     );
     }

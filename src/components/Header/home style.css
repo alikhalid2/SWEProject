@@ -10,6 +10,7 @@
   align-items: center; 
   height: 4em;
   justify-content:space-between;
+  padding-bottom: 1em;
 }
 
 .header-logo {
@@ -29,6 +30,7 @@
   align-items: center;
   margin: 0;
   padding: 0;
+  
 }
 .header-search input[type="text"]{
   
@@ -60,24 +62,29 @@
 
 footer {
   background-color: black;
-  
   display: grid;
   grid-template-areas: ' footer-logo  list list2';
   align-items: center; 
   justify-content:space-between;
   grid: 30% 30% 40% ;
+  /* position: fixed;
+  bottom: 0; 
+  width: 100%; */
+  padding-top: 2em;
 }
 .team{
   background-color: black;
-  
+ 
+  /* position: fixed;
+  bottom: 7.9em; 
+  width: 100%; */
 }
  p{
   color: white;
   text-align: center;
   margin: 0;
-  padding-bottom: 2em;
  margin-left: 3em;
- font-size: 30px;
+ font-size: 20px;
 }
  p span {
   color: red;
@@ -100,6 +107,7 @@ footer {
 }
 .list-decoration{
   list-style-type: none;
+  font-size: 20px;
 }
 .bar2{
   width: 100%;
@@ -113,20 +121,32 @@ footer {
   background-image: linear-gradient(0deg, rgba(0,62,62, 0),rgba(0,62,62, 0.8));
   margin: 0;
   margin-bottom:3em;
+  
   }
    #navbar {
     width: 100%;   
     top:10px;
-    left:10px;     
+    left:10px;  
+   
 }
 .navul {
         margin: 0px;
         padding: 5px 0px 5px 30px;
+        
+
+}
+a:visited {
+  background-color: cyan;
+}
+Link{
+  text-decoration: none;
+  text-decoration-color: none;
 }
 .navli {
         display: inline;
         margin-right: 100px;
         
+
 }
 /*
 .sameline{

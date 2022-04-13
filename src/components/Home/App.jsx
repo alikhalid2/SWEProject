@@ -40,7 +40,7 @@ export default class App extends Component{
 
 
 
-
+	
 
     render() {
         return (
@@ -49,24 +49,26 @@ export default class App extends Component{
 			<div className="bar2">
 	<nav id="navbar">
 	<ul className="navul">
-		{this.state.categories.alist.map((category) => <li key = {category} className = 'navli'><Link to = {category}>{category}</Link></li>)}
-	{/* <Link to = '/ahmed'><li  className="navli"> All Game </li></Link>
-	<li className="navli"> Latest Game </li>
-	<li className="navli">Coming Soon </li>
-	<li className="navli">Star War </li>
-	<li className="navli">Star War </li>
-	<li className="navli">EA Sports </li> */}
+	
+	<Link to = '/ahmed' style={{ textDecoration: 'none',color: 'white'  }}><li  className="navli"> All Game </li></Link>
+	<Link to = '/ahmed' style={{ textDecoration: 'none',color: 'white'  }}><li className="navli"> Latest Game </li></Link>
+	<Link to = '/ahmed' style={{ textDecoration: 'none',color: 'white'  }}><li className="navli">Coming Soon </li></Link>
+	<Link to = '/ahmed' style={{ textDecoration: 'none',color: 'white'  }}><li className="navli">Star War </li></Link>
+	<Link to = '/ahmed' style={{ textDecoration: 'none',color: 'white'  }}><li className="navli">Star War </li></Link>
+	<Link to = '/ahmed' style={{ textDecoration: 'none',color: 'white'  }}><li className="navli">EA Sports </li></Link>
+
+
 	
 	</ul>
 
 	</nav>
 
-	<ul>
+	{/* <ul>
 		<Routes>
-			<Route path = ':category' element = {<Category games = {this.props.games}/>} />
-			<Route path = '/' element = {<Category games = {this.props.games}/>} />
+			<Route path = ':category' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
+			<Route path = '/' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
 		</Routes>
-	</ul>
+	</ul> */}
 	</div>
            
         );

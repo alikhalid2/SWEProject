@@ -69,7 +69,9 @@ export default class CoreApp extends Component{
     }
     // handling current game
     changeCurrentGame = (gameNumber) => {
-        this.setState({currentGame: gameNumber});
+        const stateClone = {...this.state};
+        stateClone.currentGame = gameNumber;
+        this.setState(stateClone);
     }
 
 
@@ -102,6 +104,8 @@ export default class CoreApp extends Component{
     
     // Render components for the page
     render() {
+        
+        console.log(this.state.currentGame);
         // testing if the state has a value
         console.log(this.state.username);
         // return of the render
@@ -114,7 +118,7 @@ export default class CoreApp extends Component{
                 {/* Inner Page */}
                 <Routes>
                     {/* The Root Path */}
-                    <Route path = '/*' element = {<Home games = {this.state.games} onClickGame = {this.changeCurrentGame} />} />
+                    <Route path = '/*' element = {<Home games = {this.state.games} handleClickGame = {this.changeCurrentGame} />} />
                     
                     {/* The Login Path */}
                     {this.state.username? <Route    path = '/login' 

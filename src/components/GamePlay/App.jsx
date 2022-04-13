@@ -53,7 +53,7 @@ export default class App extends Component {
                         <div className = 'gameContainer'>
                             <h1 className= "play-time">IT'S TIME TO PLAY</h1>
 
-                            <iframe className = 'game' src = "http://localhost:7000/Games/FirstGame/webGL/index.html" width = {1000} height = {700} allowFullScreen title = "blabla"></iframe>
+                            <iframe className = 'game' src = {this.props.game.path + 'webGL/index.html'} width = {1000} height = {700} allowFullScreen title = "blabla"></iframe>
                             
                             <button id= "dlbutton" className="downloadbutton" onClick={this.dd}> Download</button>
                         </div>
