@@ -105,6 +105,20 @@ export default class CoreApp extends Component{
         const loginner = await api.loginInfo();
         console.log(loginner.username);
         this.setState({username: loginner.username})
+
+        const gridContainer = document.querySelector('.game-list');
+		let gameLength = Object.keys(this.state.games).length;
+		let templateArea = "";
+		let modulus = gameLength % 3;
+		if (modulus !== 0){
+			gameLength += 3 - modulus;
+		}
+		for(let i = 1; i <= gameLength; i += 3){
+			templateArea += `'${i} ${i + 1} ${i + 2}' `;
+		}
+		
+		gridContainer.style.cssText = `display: grid; grid-template-areas: ${templateArea}; grid-template-columns: auto auto auto; gap: 2em;`;
+		
     }
 
 

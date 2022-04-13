@@ -25,7 +25,7 @@ export default function Category(props) {
         console.log(games);
         const alist = [];
         for (let game in games){
-            alist.push(<li key = {props.games[game].name} className="gamebox"><GameCard game = {props.games[game]} gameNumber = {game}/>{props.games[game].name}</li>)
+            alist.push(<li key = {props.games[game].name} className="gamebox"><GameCard game = {props.games[game]} gameNumber = {game}/><p className = 'game-paragraph'>{props.games[game].name}</p></li>)
         }
         return alist
     }

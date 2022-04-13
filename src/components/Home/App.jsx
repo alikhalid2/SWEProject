@@ -38,7 +38,22 @@ export default class App extends Component{
 		return categories;
 	};
 
-
+	async componentDidMount() {
+		const gridContainer = document.querySelector('.game-list');
+		let gameLength = this.state.games.length;
+		let templateArea = "";
+		let modulus = gameLength % 3;
+		if (modulus !== 0){
+			gameLength += 3 - modulus;
+		}
+		for(let i = 1; i <= gameLength; i += 3){
+			templateArea += `'${i} ${i + 1} ${i + 2}' `;
+		}
+		console.log(templateArea);
+		
+		gridContainer.style.cssText = "display: grid; grid-template-areas: '1 2 3' '4 5 6' '7 8 9'; grid-template-columns: auto auto auto; gap: 2em;";
+		
+	}
 
 
 

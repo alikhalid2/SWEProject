@@ -1,11 +1,9 @@
-.game-list {
-    display: grid;
-    grid-template-areas: '1 2 3' '4 5 6' '7 8 9';
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-    gap: 2em;
+// .game-list {
    
-}
+// }
 .game-list li {
     text-decoration: none;
+}
+.game-paragraph {
+    margin: 0;
 }
