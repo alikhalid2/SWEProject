@@ -27,21 +27,21 @@ export default class CoreApp extends Component{
                 1: {
                     name: '2D platformer',
                     thumnail: 'http://localhost:3000/Games/1/Screenshots/Screenshot_677x423_8.png',
-                    categories: ['platform', 'adventure'],
+                    categories: ['platform', 'adventure', '2D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 1 on the server.',
                     path: 'http://localhost:3000/Games/1/',
                 },
                 2: {
                     name: '2D shooter',
                     thumnail: 'http://localhost:3000/Games/2/Screenshots/Screenshot_1904x891_12.png',
-                    categories: ['shooter', 'action'],
+                    categories: ['shooter', 'action', '2D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 2 on the server.',
                     path: 'http://localhost:3000/Games/2/',
                 },
                 3: {
                     name: '3D platformer',
                     thumnail: 'http://localhost:3000/Games/3/Screenshots/Screenshot_1920x907_14.png',
-                    categories: ['platform', 'action'],
+                    categories: ['platform', 'action', '3D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 3 on the server.',
                     path: 'http://localhost:3000/Games/3/',
                     
@@ -49,14 +49,14 @@ export default class CoreApp extends Component{
                 4: {
                     name: '3D shooter',
                     thumnail: 'http://localhost:3000/Games/4/Screenshots/Screenshot_1132x483_9.png',
-                    categories: ['shooter', 'adventure'],
+                    categories: ['shooter', 'adventure', '3D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 4 on the server.',
                     path: 'http://localhost:3000/Games/4/',
                 },
                 5: {
                     name: 'space astronout',
                     thumnail: 'http://localhost:3000/Games/5/Screenshots/Screenshot_484x185_4.png',
-                    categories: ['platform', 'adventure'],
+                    categories: ['platform', 'adventure', '2D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 5 on the server.',
                     path: 'http://localhost:3000/Games/5/',
 
@@ -64,7 +64,7 @@ export default class CoreApp extends Component{
                 6: {
                     name: 'space blaster',
                     thumnail: 'http://localhost:3000/Games/6/Screenshots/Screenshot_528x268_2.png',
-                    categories: ['shooter', 'action'],
+                    categories: ['shooter', 'action', '2D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 6 on the server.',
                     path: 'http://localhost:3000/Games/6/',
 
@@ -72,7 +72,7 @@ export default class CoreApp extends Component{
                 7: {
                     name: 'insect planet',
                     thumnail: 'http://localhost:3000/Games/7/Screenshots/Screenshot_460x192_7.png',
-                    categories: ['shooter', 'adventure'],
+                    categories: ['shooter', 'adventure', '3D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 7 on the server.',
                     path: 'http://localhost:3000/Games/7/',
 
@@ -80,7 +80,7 @@ export default class CoreApp extends Component{
                 9: {
                     name: 'planet shooter',
                     thumnail: 'http://localhost:3000/Games/9/Screenshots/2021-10-07 (11).png',
-                    categories: ['shooter', 'action'],
+                    categories: ['shooter', 'action', '3D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 9 on the server.',
                     path: 'http://localhost:3000/Games/9/',
 
@@ -88,87 +88,87 @@ export default class CoreApp extends Component{
                 8: {
                     name: 'space-stronaut 64',
                     thumnail: 'http://localhost:3000/Games/8/Screenshots/Screenshot_507x257_5.png',
-                    categories: ['platform', 'adventure'],
+                    categories: ['platform', 'adventure', '3D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 8 on the server.',
                     path: 'http://localhost:3000/Games/8/',
 
                 },
                 10: {
-                    name: 'space-stronaut 64',
-                    thumnail: 'http://localhost:3000/Games/10/Screenshots/Screenshot_507x257_5.png',
-                    categories: ['platform', 'adventure'],
+                    name: 'the astronaut adventure',
+                    thumnail: 'http://localhost:3000/Games/10/Screenshots/Screenshot_1920x907_1.png',
+                    categories: ['platform', 'adventure', 'action', '2D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 10 on the server.',
                     path: 'http://localhost:3000/Games/10/',
 
                 },
                 11: {
-                    name: 'space-stronaut 64',
-                    thumnail: 'http://localhost:3000/Games/11/Screenshots/Screenshot_507x257_5.png',
-                    categories: ['platform', 'adventure'],
+                    name: '2D space conquer',
+                    thumnail: 'http://localhost:3000/Games/11/Screenshots/photo_2022-04-13_21-56-16.jpg',
+                    categories: ['shooter', 'action', '2D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 11 on the server.',
                     path: 'http://localhost:3000/Games/11/',
 
                 },
                 12: {
-                    name: 'space-stronaut 64',
-                    thumnail: 'http://localhost:3000/Games/12/Screenshots/Screenshot_507x257_5.png',
-                    categories: ['platform', 'adventure'],
+                    name: 'mars tower',
+                    thumnail: 'http://localhost:3000/Games/12/Screenshots/5.PNG',
+                    categories: ['shooter', 'adventure', 'action', '3D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 12 on the server.',
                     path: 'http://localhost:3000/Games/12/',
 
                 },
                 13: {
-                    name: 'space-stronaut 64',
-                    thumnail: 'http://localhost:3000/Games/13/Screenshots/Screenshot_507x257_5.png',
-                    categories: ['platform', 'adventure'],
+                    name: 'astra',
+                    thumnail: 'http://localhost:3000/Games/13/Screenshots/Screenshot_1920x907_31.png',
+                    categories: ['platform', 'adventure', '3D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 13 on the server.',
                     path: 'http://localhost:3000/Games/13/',
 
                 },
                 14: {
-                    name: 'space-stronaut 64',
-                    thumnail: 'http://localhost:3000/Games/14/Screenshots/Screenshot_507x257_5.png',
-                    categories: ['platform', 'adventure'],
+                    name: 'mars invasion',
+                    thumnail: 'http://localhost:3000/Games/14/Screenshots/Screen.png',
+                    categories: ['shooter', 'action', '3D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 14 on the server.',
                     path: 'http://localhost:3000/Games/14/',
 
                 },
                 15: {
-                    name: 'space-stronaut 64',
-                    thumnail: 'http://localhost:3000/Games/15/Screenshots/Screenshot_507x257_5.png',
-                    categories: ['platform', 'adventure'],
+                    name: 'space station adventure',
+                    thumnail: 'http://localhost:3000/Games/15/Screenshots/cover.jpg',
+                    categories: ['platform', 'adventure', '2D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 15 on the server.',
                     path: 'http://localhost:3000/Games/15/',
 
                 },
                 16: {
-                    name: 'space-stronaut 64',
-                    thumnail: 'http://localhost:3000/Games/16/Screenshots/Screenshot_507x257_5.png',
-                    categories: ['platform', 'adventure'],
+                    name: 'the space adventure',
+                    thumnail: 'http://localhost:3000/Games/16/Screenshots/Screenshot_1920x1080_13.png',
+                    categories: ['shooter', 'action', '2D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 16 on the server.',
                     path: 'http://localhost:3000/Games/16/',
 
                 },
                 17: {
-                    name: 'space-stronaut 64',
-                    thumnail: 'http://localhost:3000/Games/17/Screenshots/Screenshot_507x257_5.png',
-                    categories: ['platform', 'adventure'],
+                    name: 'destroyed station',
+                    thumnail: 'http://localhost:3000/Games/17/Screenshots/Screenshot_1366x605_18.png',
+                    categories: ['shooter', 'adventure', '3D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 17 on the server.',
                     path: 'http://localhost:3000/Games/17/',
 
                 },
                 18: {
-                    name: 'space-stronaut 64',
-                    thumnail: 'http://localhost:3000/Games/18/Screenshots/Screenshot_507x257_5.png',
-                    categories: ['platform', 'adventure'],
+                    name: 'the adventure',
+                    thumnail: 'http://localhost:3000/Games/18/Screenshots/Screenshot_1366x605_4.png',
+                    categories: ['platform', 'action', '3D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 18 on the server.',
                     path: 'http://localhost:3000/Games/18/',
 
                 },
                 19: {
-                    name: 'space-stronaut 64',
-                    thumnail: 'http://localhost:3000/Games/19/Screenshots/Screenshot_507x257_5.png',
-                    categories: ['platform', 'adventure'],
+                    name: 'the final mission',
+                    thumnail: 'http://localhost:3000/Games/19/Screenshots/Pe76m5.png',
+                    categories: ['shooter', 'adventure', 'action', '3D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 19 on the server.',
                     path: 'http://localhost:3000/Games/19/',
 
