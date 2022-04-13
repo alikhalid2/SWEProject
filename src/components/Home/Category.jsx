@@ -5,11 +5,17 @@ import GameCard from '../GameCard/App';
 export default function Category(props) {
 
     const filteredGames = (category) => {
-        console.log(category);
-        console.log(props);
+        const returnedGames = {};
         if (category === undefined){
             return props.games
+        } else {
+            for (let game in props.games){
+                if (category in props.games[game].categories){
+                    returnedGames[game] = props.games[game];
+                }
+            }
         }
+        return returnedGames;
     }
     
     const returnGames = (games, handleClickGame) => {
@@ -24,7 +30,7 @@ export default function Category(props) {
     console.log(props.handleClickGame);
     return (
         <React.Fragment>
-        {returnGames(filteredGames(category), props.handleClickGame)}
+            {returnGames(filteredGames(category), props.handleClickGame)}
         </React.Fragment>
     )
 }

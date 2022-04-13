@@ -131,7 +131,7 @@ export default class CoreApp extends Component{
 
                     {/* Adding Game Path */}
                     <Route path = '/gameadding' element = {<GameAdding />}/>
-                    <Route path = '/gameplay' element = {<GamePlay game = {this.state.games[this.state.currentGame]}/>} />
+                    <Route path = '/gameplay/:gameNumber' element = {<GamePlay games = {this.state.games}/>} />
                 
                 </Routes>
                 {/* Footer component */}

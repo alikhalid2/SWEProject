@@ -1,10 +1,41 @@
 import React, { Component } from 'react';
 //import Game from '../Game/App';
 import axios from 'axios';
+import {useParams} from 'react-router-dom';
 import './App.scss';
 import $ from 'jquery';
 
 
+const download = (url, gameName) => {
+    console.log('clicked');
+    axios({
+          url: url,
+          method: 'GET',
+          responseType: 'blob'
+    })
+    .then((response) => {
+        const url = window.URL
+                .createObjectURL(new Blob([response.data]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', gameName + '.zip');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    })
+};
+
+function TheGame(props) {
+    const { gameNumber } = useParams();
+
+    return(
+        <React.Fragment>
+            <iframe className = 'game' src = {props.games[gameNumber].path + 'webGL/index.html'} width = {1000} height = {700} allowFullScreen title = "blabla"></iframe>
+                            
+            <button id= "dlbutton" className="downloadbutton" onClick={(e) => {e.preventDefault(); download(props.games[gameNumber].path + 'windows.zip', props.games[gameNumber].name)}}> Download</button>
+        </React.Fragment>
+    )
+}
 function setRatingValue(e) {
     var rect = e.target.getBoundingClientRect();
     var x = e.clientX - rect.left; //x position within the element.
@@ -25,25 +56,7 @@ export default class App extends Component {
     }
 
 
-    dd = (e) => {
-        e.preventDefault();
-        console.log('clicked');
-        axios({
-              url: '/Games/FirstGame/windows.zip',
-              method: 'GET',
-              responseType: 'blob'
-        })
-        .then((response) => {
-            const url = window.URL
-                    .createObjectURL(new Blob([response.data]));
-            const link = document.createElement('a');
-            link.href = url;
-            link.setAttribute('download', 'windows.zip');
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        })
-    };
+    
     render() {
         return (
             <React.Fragment>
@@ -52,10 +65,7 @@ export default class App extends Component {
                     <div className = 'grid-container'>
                         <div className = 'gameContainer'>
                             <h1 className= "play-time">IT'S TIME TO PLAY</h1>
-
-                            <iframe className = 'game' src = {this.props.game.path + 'webGL/index.html'} width = {1000} height = {700} allowFullScreen title = "blabla"></iframe>
-                            
-                            <button id= "dlbutton" className="downloadbutton" onClick={this.dd}> Download</button>
+                            <TheGame games = {this.props.games}/>
                         </div>
                         <div className = 'gameContentContainer'>
                             <h4>Description</h4>

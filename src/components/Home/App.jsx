@@ -63,12 +63,12 @@ export default class App extends Component{
 
 	</nav>
 
-	{/* <ul>
+	<ul>
 		<Routes>
 			<Route path = ':category' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
 			<Route path = '/' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
 		</Routes>
-	</ul> */}
+	</ul> 
 	</div>
            
         );
