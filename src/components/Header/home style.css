@@ -149,7 +149,7 @@ footer {
 .gamebox{
   color: white; 
   text-align: center;
- position: relative;
+ display:inline ;
 }
 /* Float four columns side by side */
 /* .column {
