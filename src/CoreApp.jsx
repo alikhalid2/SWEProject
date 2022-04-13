@@ -170,7 +170,7 @@ export default class CoreApp extends Component{
     };
     // Render components for the page
     render() {
-    
+        window.onpopstate(this.doStyle);
         // return of the render
         return (
             
