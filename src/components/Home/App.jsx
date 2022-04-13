@@ -62,13 +62,15 @@ export default class App extends Component{
 
 	</nav>
 	</div>
-    
-	<ul className = "game-list">
+    <div>
+	<ul className = "game-list ">
 		<Routes>
 			<Route path = ':category' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
+			
 			<Route path = '/' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
 		</Routes>
-	</ul>  
+	</ul> 
+	</div> 
 	</React.Fragment>
  
         );
