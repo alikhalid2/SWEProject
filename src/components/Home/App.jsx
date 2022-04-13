@@ -50,7 +50,8 @@ export default class App extends Component{
 			<div className="bar2">
 	<nav id="navbar">
 	<ul className="navul">
-	{this.getCategories().alist.map((category) => <Link to = {'/' + category} style={{ textDecoration: 'none',color: 'white'  }}><li  className="navli">{category}</li></Link>)}
+		<Link to = '/' style={{ textDecoration: 'none',color: 'white'  }}><li  className="navli"> All Games </li></Link>
+		{this.getCategories().alist.map((category) => <Link to = {'/' + category} style={{ textDecoration: 'none',color: 'white'  }}><li  className="navli">{category}</li></Link>)}
 	
 
 

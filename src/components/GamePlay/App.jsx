@@ -27,13 +27,21 @@ const download = (url, gameName) => {
 
 function TheGame(props) {
     const { gameNumber } = useParams();
-
+    const checkUser = () => {
+        if (props.isUserActive){
+            return(<button id= "dlbutton" className="downloadbutton" onClick={(e) => {e.preventDefault(); download(props.games[gameNumber].path + 'windows.zip', props.games[gameNumber].name)}}>Download</button>)
+        }
+        return(
+            <button id= "dlbutton" className="downloadbutton" style = {{color: 'red'}} disabled>Please Login To Download</button>
+            
+            
+        )
+    }
     return(
         <React.Fragment>
             <iframe className = 'game' src = {props.games[gameNumber].path + 'webGL/index.html'} width = {1000} height = {700} allowFullScreen title = "blabla"></iframe>
-                            
-            <button id= "dlbutton" className="downloadbutton" onClick={(e) => {e.preventDefault(); download(props.games[gameNumber].path + 'windows.zip', props.games[gameNumber].name)}}> Download</button>
-        </React.Fragment>
+            {checkUser()}         
+         </React.Fragment>
     )
 }
 function setRatingValue(e) {
@@ -65,7 +73,7 @@ export default class App extends Component {
                     <div className = 'grid-container'>
                         <div className = 'gameContainer'>
                             <h1 className= "play-time">IT'S TIME TO PLAY</h1>
-                            <TheGame games = {this.props.games}/>
+                            <TheGame games = {this.props.games} isUserActive = {this.props.isUserActive}/>
                         </div>
                         <div className = 'gameContentContainer'>
                             <h4>Description</h4>
