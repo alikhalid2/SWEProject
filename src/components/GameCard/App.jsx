@@ -8,7 +8,7 @@ function GameThumnail(props){
         navigate('/gameplay/' + gameNumber);
     };
     return(
-        <img onClick = {() => handleClick(props.gameNumber)} src = {props.game.thumnail} alt = {props.game.name}></img>
+        <img onClick = {() => handleClick(props.gameNumber)} src = {props.game.thumnail} alt = {props.game.name} height = '300px' width = '300px'></img>
     );
 }
 export default class App extends Component {

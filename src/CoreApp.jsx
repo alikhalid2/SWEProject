@@ -54,7 +54,6 @@ export default class CoreApp extends Component{
                     path: 'http://localhost:3000/Games/4/',
                 }
             },
-            currentGame: 1,
         };
         
         
@@ -66,12 +65,6 @@ export default class CoreApp extends Component{
         const loginner = await api.loginInfo();
         console.log(loginner.username);
         this.setState({username: loginner.username})
-    }
-    // handling current game
-    changeCurrentGame = (gameNumber) => {
-        const stateClone = {...this.state};
-        stateClone.currentGame = gameNumber;
-        this.setState(stateClone);
     }
 
 
@@ -118,7 +111,7 @@ export default class CoreApp extends Component{
                 {/* Inner Page */}
                 <Routes>
                     {/* The Root Path */}
-                    <Route path = '/*' element = {<Home games = {this.state.games} handleClickGame = {this.changeCurrentGame} />} />
+                    <Route path = '/*' element = {<Home games = {this.state.games}/>} />
                     
                     {/* The Login Path */}
                     {this.state.username? <Route    path = '/login' 

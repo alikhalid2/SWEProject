@@ -44,33 +44,30 @@ export default class App extends Component{
 
     render() {
         return (
-            
+        
+			<React.Fragment>
           
 			<div className="bar2">
 	<nav id="navbar">
 	<ul className="navul">
+	{this.getCategories().alist.map((category) => <Link to = {'/' + category} style={{ textDecoration: 'none',color: 'white'  }}><li  className="navli">{category}</li></Link>)}
 	
-	<Link to = '/ahmed' style={{ textDecoration: 'none',color: 'white'  }}><li  className="navli"> All Game </li></Link>
-	<Link to = '/ahmed' style={{ textDecoration: 'none',color: 'white'  }}><li className="navli"> Latest Game </li></Link>
-	<Link to = '/ahmed' style={{ textDecoration: 'none',color: 'white'  }}><li className="navli">Coming Soon </li></Link>
-	<Link to = '/ahmed' style={{ textDecoration: 'none',color: 'white'  }}><li className="navli">Star War </li></Link>
-	<Link to = '/ahmed' style={{ textDecoration: 'none',color: 'white'  }}><li className="navli">Star War </li></Link>
-	<Link to = '/ahmed' style={{ textDecoration: 'none',color: 'white'  }}><li className="navli">EA Sports </li></Link>
 
 
 	
 	</ul>
 
 	</nav>
-
+	</div>
+    
 	<ul>
 		<Routes>
 			<Route path = ':category' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
 			<Route path = '/' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
 		</Routes>
-	</ul> 
-	</div>
-           
+	</ul>  
+	</React.Fragment>
+ 
         );
     }
 }
