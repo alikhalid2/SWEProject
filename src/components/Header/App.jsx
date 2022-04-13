@@ -46,7 +46,8 @@ export default class App extends Component {
                           </div>
                    <div className="header-login">{this.isLogin()}</div>
 
-                    </div>   
+                    </div> 
+                      
                       </div>
                      
               </React.Fragment> 
