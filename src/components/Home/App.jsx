@@ -55,9 +55,8 @@ export default class App extends Component{
 			<div className="bar2">
 	<nav id="navbar">
 	<ul className="navul">
-		<Link to = '/' style={{ textDecoration: 'none',color: 'white', cursor: 'PointerEvent',
-         cursor: 'hand' }}><li  className="navli"> All Games </li></Link>
-		{this.getCategories().alist.map((category) => <Link to = {'/' + category} style={{ textDecoration: 'none',color: 'white'  }}><li  className="navli">{category}</li></Link>)}
+		<Link to = '/' style={{ textDecoration: 'none',color: 'white', cursor: 'PointerEvent' }}><li  key = {'allGames'}className="navli"> All Games </li></Link>
+		{this.getCategories().alist.map((category) => <Link to = {'/' + category} style={{ textDecoration: 'none',color: 'white'  }}><li  key = {category} className="navli">{category}</li></Link>)}
 	
 
 
@@ -69,7 +68,7 @@ export default class App extends Component{
     
 	<ul className = "game-list ">
 		<Routes>
-			<Route path = ':category' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
+			<Route path = '/:category' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
 			
 			<Route path = '/' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
 		</Routes>
