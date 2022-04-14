@@ -186,23 +186,6 @@ export default class CoreApp extends Component{
         console.log(loginner.username);
         this.setState({username: loginner.username})
 
-
-        const gridContainer = document.querySelector('.game-list');
-		let gameLength = Object.keys(this.state.games).length;
-		let templateArea = "";
-		let modulus = gameLength % 3;
-		if (modulus !== 0){
-			gameLength += 3 - modulus;
-		}
-		for(let i = 1; i <= gameLength; i += 3){
-			templateArea += `'${i} ${i + 1} ${i + 2}' `;
-		}
-		
-		gridContainer.style.cssText = `display: grid; grid-template-areas: ${templateArea}; grid-template-columns: auto auto auto; gap: 2em;padding-left: 40px;
-        padding-right: 40px;   `;
-
-
-		
     }
 
     // handling loging process
@@ -244,7 +227,7 @@ export default class CoreApp extends Component{
             templateArea += `'${i} ${i + 1} ${i + 2}' `;
         }
         
-        gridContainer.style.cssText = `display: grid; grid-template-areas: ${templateArea}; grid-template-columns: auto auto auto; gap: 2em;`;
+        gridContainer.style.cssText = `display: grid; grid-template-areas: ${templateArea}; grid-template-columns: auto auto auto; gap: 2em; padding-right: 3em;`;
     
     };
     // Render components for the page

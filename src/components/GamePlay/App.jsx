@@ -91,7 +91,7 @@ export default class App extends Component {
         return (
             <React.Fragment>
                        
-
+                
                 <TheGame games = {this.props.games} isUserActive = {this.props.isUserActive}/>
                         
             </React.Fragment>

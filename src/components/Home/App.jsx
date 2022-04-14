@@ -40,7 +40,7 @@ export default class App extends Component{
 
 	async componentDidMount(){
 
-	this.props.instanceStyle()
+		this.props.instanceStyle()
 	}
 
 
