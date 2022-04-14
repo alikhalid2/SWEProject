@@ -70,7 +70,7 @@ export default class CoreApp extends Component{
 
                 },
                 7: {
-                    name: 'insect planet',
+                    name: 'insect planet (need for maintanence)',
                     thumnail: 'http://localhost:3000/Games/7/Screenshots/Screenshot_460x192_7.png',
                     categories: ['shooter', 'adventure', '3D'],
                     discription: 'This is a fake description not having any specific meaning but every game has a special discription this is the game number 7 on the server.',
