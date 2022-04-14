@@ -4,9 +4,9 @@ div.grid-container {
     'g d'
     'g c'
     'g r';
-    grid-template-rows: 1em auto 10em;
-    grid-template-columns: 75% auto;
-    gap: 4em;
+    grid-template-rows: 5em 400px auto;
+    grid-template-columns: auto 315px;
+    column-gap: 1em;
     padding: 0 2em;
     margin-top: 2em;
     margin-right: 5em;
@@ -17,15 +17,25 @@ div.rateContainer {
 }
 div.gameContentContainer {
     grid-area: c;
-    padding: 1em;
-    background: white;
-    font-size: 1.2em;
-    border: 0.4em solid cyan;
-    border-radius: 1em;
-
+}
+div.gameContentContainer div {
+  
+  padding: 1em;
+  padding-bottom: 2em;
+  border: 0.2em solid cyan;
+  font-size: 1.5em;
+  background: white;
+  border-radius: 1em;
 }
 div.gameContentContainer h4 {
   margin-top: 0.1em;
+}
+div.gameContentContainer p {
+  margin: 0;
+  font-size: 1em;
+  padding-left: 0.5em;
+  text-align: justify;
+  hyphens: auto;
 }
 .downloadbutton {
     color: #04444e;

@@ -49,8 +49,10 @@ function TheGame(props) {
                     {checkUser()}  
                 </div>
                 <div className = 'gameContentContainer'>
-                    <h4>Description</h4>
-                    <p style = {{color: 'black'}}>{props.games[gameNumber].discription}</p>
+                    <div>
+                        <h4>Description</h4>
+                        <p style = {{color: 'black'}}>{props.games[gameNumber].discription}</p>
+                    </div>
                 </div>
                 <div className = 'rateContainer'>
                     <h2 style = {{color: 'cyan'}}>Rate Me!</h2>
@@ -91,7 +93,7 @@ export default class App extends Component {
         return (
             <React.Fragment>
                        
-                
+
                 <TheGame games = {this.props.games} isUserActive = {this.props.isUserActive}/>
                         
             </React.Fragment>
