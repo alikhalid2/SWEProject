@@ -55,8 +55,8 @@ export default class App extends Component{
 			<div className="bar2">
 	<nav id="navbar">
 	<ul className="navul">
-		<Link to = '/' style={{ textDecoration: 'none',color: 'white', cursor: 'PointerEvent' }}><li  key = {'allGames'}className="navli"> All Games </li></Link>
-		{this.getCategories().alist.map((category) => <Link to = {'/' + category} style={{ textDecoration: 'none',color: 'white'  }}><li  key = {category} className="navli">{category}</li></Link>)}
+		<li  key = {'allGames'}className="navli"><Link to = '/' style={{ textDecoration: 'none',color: 'white', cursor: 'PointerEvent' }}> All Games </Link></li>
+		{this.getCategories().alist.map((category) => <li  key = {category} className="navli"><Link to = {'/' + category} style={{ textDecoration: 'none',color: 'white'  }}>{category}</Link></li>)}
 	
 
 
