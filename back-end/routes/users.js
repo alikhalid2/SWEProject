@@ -26,7 +26,7 @@ router.post('/login', (req, res) => {
     console.log(req.body);
     db.user.findOne({username: req.body.username, password: req.body.password})
     .then((data) => {
-        if (data.length !== 0)
+        if (data)
         {
             res.send(true);
         }
