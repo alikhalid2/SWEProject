@@ -1,3 +1,23 @@
+
+// handling database
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://AhmedElkfafy:ahmed123456789@cluster0.ejctf.mongodb.net/Cluster0?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+
+
+
+
+
+
+
+
+
 // handling express module
 const express = require('express');
 const app = express();
