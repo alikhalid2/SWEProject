@@ -13,16 +13,19 @@ const fileUpload = require('express-fileupload');
 const validator = require('../utils/validate.js');
 
 // handling user database controller
-const user = require('../controllers/UsersDbController.js');
+const db = require('../controllers/UsersDbController.js');
+
 const { application } = require('express');
 
 // handling express router
 const router = express.Router();
 
+router.get('/', () => console.log(db.user));
+
 // handling login request
 router.post('/login', (req, res) => {
     console.log(req.body);
-    user.find({username: req.body.username, password: req.body.password})
+    db.user.findOne({username: req.body.username, password: req.body.password})
     .then((data) => {
         if (data.length !== 0)
         {
@@ -46,11 +49,12 @@ router.post("/register",(req,res) => {
     let valid = validator(req.body);
     if (valid){
         //users.push(req.body);      //need to be stored in db
-        user.init()
-        .then(() => user.create(req.body).then(() => res.send(true)).catch((err) => {console.log(err);res.send(false)}));
+        // user.init()
+        // .then(() => user.create(req.body).then(() => res.send(true)).catch((err) => {console.log(err);res.send(false)}));
+        db.user.insertOne(req.body);
+
     }
-    else
-        res.send(valid);
+    res.send(valid);
 
     console.log(valid);
 
@@ -59,22 +63,19 @@ router.post("/register",(req,res) => {
 
 // getting the current user info
 router.get('/user', async (req, res) => {
-    const availableUser = await user.find({currentUser: 1})
+    const availableUser = await db.user.findOne({currentUser: 1})
     console.log(availableUser);
-    res.send(availableUser[0]);
+    res.send(availableUser);
 });
 
 // edit the current user info 
-router.put('/user', (req, res) => {
-    user.findOneAndUpdate({currentUser: 1}, {currentUser: 0})
-    .then(async () => {
-        console.log(req.body.username);
-        await user.findOneAndUpdate(req.body, {currentUser: 1})
-    });
+router.put('/user', async (req, res) => {
+    console.log(req.body.username);
+    await db.user.findOneAndUpdate(req.body, {$set: {currentUser: 1}})
     
 });
 router.put('/user/logout', async (req, res) => {
-    await user.findOneAndUpdate({currentUser: 1}, {currentUser: 0});
+    await db.user.findOneAndUpdate({currentUser: 1}, {$set: {currentUser: 0}});
 })
 
 

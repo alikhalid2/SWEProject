@@ -18,10 +18,7 @@ const usersRoutes = require('./routes/users.js');
 
 
 
-const { client } = require('./usersCloud');
-client.connect().catch(e => {
-    console.log(e);
-});
+
 //
 
 // handling bodyParser module { helping with encoded html body }
