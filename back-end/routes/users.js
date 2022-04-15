@@ -15,7 +15,6 @@ const validator = require('../utils/validate.js');
 // handling user database controller
 const db = require('../controllers/UsersDbController.js');
 
-const { application } = require('express');
 
 // handling express router
 const router = express.Router();

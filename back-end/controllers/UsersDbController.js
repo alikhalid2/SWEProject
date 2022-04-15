@@ -47,9 +47,11 @@ await client.connect();
 
 
 
-const find = await client.db('flareGun').collection('users').findOne({userName: "Ali Khalid"});
-console.log(find);
+const find = await client.db('flareGun').collection('user').find({});
+console.log(await find.toArray());
 const user = await client.db('flareGun').collection('user');
+const game = await client.db('flareGun').collection('game');
 module.exports.user = user;
+module.exports.game = game;
 }
 main();

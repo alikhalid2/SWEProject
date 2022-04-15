@@ -21,6 +21,10 @@ const api = {
     },
     setLogout: async () => {
         await axios.put('/api/user/logout');
+    },
+    gameInfo: async () => {
+        const {data} = await axios.get('/api/games');
+        return data;
     }
 
 };

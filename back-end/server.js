@@ -5,6 +5,8 @@ const app = express();
 // handling userRoutes module { routes for api that about users }
 const usersRoutes = require('./routes/users.js');
 
+//handling gamesRoutes module {routes for api that about games }
+const gameRoutes = require('./routes/games.js');
 
 //* Mongoose contactor with mongo db data base
 // const mongoose = require('mongoose');
@@ -32,6 +34,8 @@ app.use(express.static('../public'));
 // handling users routes as middlewares
 app.use("/api", usersRoutes);
 
+// handling games routes as middlewares
+app.use('/api', gameRoutes);
 // make the server listening to port 7000
 app.listen(7000, () => {
     console.log('server is running');
