@@ -7,14 +7,21 @@ const usersRoutes = require('./routes/users.js');
 
 
 //* Mongoose contactor with mongo db data base
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/users', 
-{
-    autoIndex: false,
+// const mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost:27017/users', 
+// {
+//     autoIndex: false,
 
-})
-.then(() => console.log('connected successfully'))
-.catch((err) => console.log(err));
+// })
+// .then(() => console.log('connected successfully'))
+// .catch((err) => console.log(err));
+
+
+
+const { client } = require('./usersCloud');
+client.connect().catch(e => {
+    console.log(e);
+});
 //
 
 // handling bodyParser module { helping with encoded html body }

@@ -1,24 +1,28 @@
-// handling mongoose
-const mongoose = require('mongoose');
+// // handling mongoose
+// const mongoose = require('mongoose');
 
-// USERS SCHEMA //
-const userschema = new mongoose.Schema({
-    username: {
-        type: String,
-        unique: true
-    },
-    email: {
-        type: String,
-        unique: true,
+// // USERS SCHEMA //
+// const userschema = new mongoose.Schema({
+//     username: {
+//         type: String,
+//         unique: true
+//     },
+//     email: {
+//         type: String,
+//         unique: true,
 
-    },
-    password: String,
-    currentUser: Boolean
-});
-//
+//     },
+//     password: String,
+//     currentUser: Boolean
+// });
+// //
 
-// modeling users { making user object }
-const user = mongoose.model('user', userschema);
+// // modeling users { making user object }
+// const user = mongoose.model('user', userschema);
+
+const {client} = require('../usersCloud');
+client.connect().then(() => )
+const user = client.db("flareGun").collection("users")
 
 // searching for all users in users collection
 user.find()
