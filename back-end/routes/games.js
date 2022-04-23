@@ -13,5 +13,13 @@ router.get('/games', async (req, res) => {
     res.send(games);
 });
 
+router.get('/search', async (req, res) => {
+    let search = req.query.search;
+    const cursor = await db.game.find({name: {$regex: new RegExp(`.*${search}.*`, 'i')}});
+    const gameResults = await cursor.toArray();
+    console.log(gameResults);
+    res.send(gameResults);
+});
+
 
 module.exports = router;

@@ -34,7 +34,7 @@
   padding: 0;
   
 }
-.header-search input[type="text"]{
+.header-search input[type="search"]{
   
   width:200px ;
   height: 30px;

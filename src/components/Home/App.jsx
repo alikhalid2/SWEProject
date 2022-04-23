@@ -68,9 +68,9 @@ export default class App extends Component{
     
 	<ul className = "game-list ">
 		<Routes>
-			<Route path = '/:category' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
+			<Route path = '/:category' element = {<Category games = {this.props.games} />}/>
 			
-			<Route path = '/' element = {<Category games = {this.props.games} handleClickGame = {this.props.handleClickGame}/>}/>
+			<Route path = '/' element = {<Category games = {this.props.games} />}/>
 		</Routes>
 	</ul>  
 

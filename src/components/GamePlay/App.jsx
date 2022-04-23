@@ -28,8 +28,15 @@ const download = (url, gameName) => {
 function TheGame(props) {
     const { gameNumber } = useParams();
     const checkUser = () => {
+        let thisGame;
+        for (let game of props.games){
+            console.log(game._id);
+            if (game._id === gameNumber){
+                thisGame = game;
+            }
+        }
         if (props.isUserActive){
-            return(<button id= "dlbutton" className="downloadbutton" onClick={(e) => {e.preventDefault(); download(props.games[gameNumber].path + 'windows.zip', props.games[gameNumber].name)}}>Download</button>)
+            return(<button id= "dlbutton" className="downloadbutton" onClick={(e) => {e.preventDefault(); download(thisGame.path + 'windows.zip', thisGame.name)}}>Download</button>)
         }
         return(
             <button id= "undownload" className="downloadbutton" style = {{color: 'red'}} title = 'Please Login First' disabled>Download</button>

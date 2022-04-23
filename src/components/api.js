@@ -25,6 +25,10 @@ const api = {
     gameInfo: async () => {
         const {data} = await axios.get('/api/games');
         return data;
+    },
+    search: async (search) => {
+        const {data} = await axios.get('/api/search', {params: {search: search}});
+        return data;
     }
 
 };
